@@ -1,0 +1,87 @@
+[
+    {
+        "name": "/datasets",
+        "subdirs": [
+            {
+                "path": "/datasets/laion-400m/webdataset-moments-filtered-encoded",
+                "elements": 832,
+                "dir_size": 2865809440
+            },
+            {
+                "path": "/datasets/laion-400m/webdataset-moments-filtered",
+                "elements": 833,
+                "dir_size": 876410532
+            },
+            {
+                "path": "/datasets/laion-400m",
+                "elements": 2,
+                "dir_size": 3742219976
+            },
+            {
+                "path": "/datasets/coco2014/val2014_512x512_30k",
+                "elements": 30000,
+                "dir_size": 1412012
+            },
+            {
+                "path": "/datasets/coco2014",
+                "elements": 3,
+                "dir_size": 1445240
+            },
+            {
+                "path": "/datasets",
+                "elements": 2,
+                "dir_size": 3743665220
+            }
+        ]
+    },
+    {
+        "name": "/checkpoints",
+        "subdirs": [
+            {
+                "path": "/checkpoints/sd",
+                "elements": 2,
+                "dir_size": 20888768
+            },
+            {
+                "path": "/checkpoints/inception",
+                "elements": 1,
+                "dir_size": 93392
+            },
+            {
+                "path": "/checkpoints/clip/models--laion--CLIP-ViT-H-14-laion2B-s32B-b79K/snapshots/94a64189c3535c1cb44acfcccd7b0908c1c8eb23",
+                "elements": 1,
+                "dir_size": 8
+            },
+            {
+                "path": "/checkpoints/clip/models--laion--CLIP-ViT-H-14-laion2B-s32B-b79K/snapshots",
+                "elements": 1,
+                "dir_size": 12
+            },
+            {
+                "path": "/checkpoints/clip/models--laion--CLIP-ViT-H-14-laion2B-s32B-b79K/refs",
+                "elements": 1,
+                "dir_size": 8
+            },
+            {
+                "path": "/checkpoints/clip/models--laion--CLIP-ViT-H-14-laion2B-s32B-b79K/blobs",
+                "elements": 1,
+                "dir_size": 3852264
+            },
+            {
+                "path": "/checkpoints/clip/models--laion--CLIP-ViT-H-14-laion2B-s32B-b79K",
+                "elements": 3,
+                "dir_size": 3852288
+            },
+            {
+                "path": "/checkpoints/clip",
+                "elements": 3,
+                "dir_size": 7704556
+            },
+            {
+                "path": "/checkpoints",
+                "elements": 5,
+                "dir_size": 52403072
+            }
+        ]
+    }
+]

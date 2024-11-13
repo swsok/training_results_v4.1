@@ -1,0 +1,167 @@
+:::MLLOG {"namespace": "", "time_ms": 1726881738008, "event_type": "POINT_IN_TIME", "key": "cache_clear", "value": true, "metadata": {"file": "<string>", "lineno": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881738010, "event_type": "POINT_IN_TIME", "key": "cache_clear", "value": true, "metadata": {"file": "<string>", "lineno": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881738027, "event_type": "POINT_IN_TIME", "key": "cache_clear", "value": true, "metadata": {"file": "<string>", "lineno": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881738058, "event_type": "POINT_IN_TIME", "key": "cache_clear", "value": true, "metadata": {"file": "<string>", "lineno": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881738172, "event_type": "POINT_IN_TIME", "key": "cache_clear", "value": true, "metadata": {"file": "<string>", "lineno": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881738391, "event_type": "POINT_IN_TIME", "key": "cache_clear", "value": true, "metadata": {"file": "<string>", "lineno": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881738422, "event_type": "POINT_IN_TIME", "key": "cache_clear", "value": true, "metadata": {"file": "<string>", "lineno": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881738487, "event_type": "POINT_IN_TIME", "key": "cache_clear", "value": true, "metadata": {"file": "<string>", "lineno": 3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881785928, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881785967, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881785975, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786107, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786111, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786122, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786225, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786233, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786266, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786285, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786302, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786338, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786345, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786371, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786433, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786501, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786504, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786521, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786540, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786572, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786595, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786598, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786608, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786618, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786626, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786626, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786628, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786629, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786632, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786638, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786648, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786657, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786658, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786660, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786681, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786690, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786695, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786703, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786709, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786720, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786730, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786739, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786766, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786768, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786885, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786896, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786904, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786915, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786943, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786943, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786986, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881786992, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787033, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787054, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787072, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787076, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787113, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787118, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787133, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787140, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787153, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787167, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787242, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881787271, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 812}}
+:::MLLOG {"namespace": "", "time_ms": 1726881795683, "event_type": "POINT_IN_TIME", "key": "submission_benchmark", "value": "gnn", "metadata": {"file": "/workspace/gnn/train.py", "lineno": 857}}
+:::MLLOG {"namespace": "", "time_ms": 1726881795684, "event_type": "POINT_IN_TIME", "key": "submission_org", "value": "NVIDIA", "metadata": {"file": "/workspace/gnn/train.py", "lineno": 857}}
+:::MLLOG {"namespace": "", "time_ms": 1726881795684, "event_type": "POINT_IN_TIME", "key": "submission_division", "value": "closed", "metadata": {"file": "/workspace/gnn/train.py", "lineno": 857}}
+:::MLLOG {"namespace": "", "time_ms": 1726881795684, "event_type": "POINT_IN_TIME", "key": "submission_status", "value": "onprem", "metadata": {"file": "/workspace/gnn/train.py", "lineno": 857}}
+:::MLLOG {"namespace": "", "time_ms": 1726881795684, "event_type": "POINT_IN_TIME", "key": "submission_platform", "value": "8xNVIDIA DGX H100", "metadata": {"file": "/workspace/gnn/train.py", "lineno": 857}}
+:::MLLOG {"namespace": "", "time_ms": 1726881795684, "event_type": "POINT_IN_TIME", "key": "seed", "value": 12246, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 858}}
+:::MLLOG {"namespace": "", "time_ms": 1726881802139, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 65536, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 909}}
+:::MLLOG {"namespace": "", "time_ms": 1726881802139, "event_type": "POINT_IN_TIME", "key": "gradient_accumulation_steps", "value": 1, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 910}}
+:::MLLOG {"namespace": "", "time_ms": 1726881802139, "event_type": "POINT_IN_TIME", "key": "opt_name", "value": "adam", "metadata": {"file": "/workspace/gnn/train.py", "lineno": 911}}
+:::MLLOG {"namespace": "", "time_ms": 1726881802139, "event_type": "POINT_IN_TIME", "key": "opt_base_learning_rate", "value": 0.003, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 912}}
+:::MLLOG {"namespace": "", "time_ms": 1726881802159, "event_type": "INTERVAL_END", "key": "init_stop", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 913}}
+:::MLLOG {"namespace": "", "time_ms": 1726881802159, "event_type": "INTERVAL_START", "key": "run_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 913}}
+:::MLLOG {"namespace": "", "time_ms": 1726881811906, "event_type": "POINT_IN_TIME", "key": "train_samples", "value": 94605581, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 934}}
+:::MLLOG {"namespace": "", "time_ms": 1726881811906, "event_type": "POINT_IN_TIME", "key": "eval_samples", "value": 788379, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 935}}
+:::MLLOG {"namespace": "", "time_ms": 1726881814313, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 1080, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1726881818541, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.05, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.05}}
+:::MLLOG {"namespace": "", "time_ms": 1726881819414, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.6521173119544983, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.05}}
+:::MLLOG {"namespace": "", "time_ms": 1726881819415, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.05, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.05}}
+:::MLLOG {"namespace": "", "time_ms": 1726881823457, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.1, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.1}}
+:::MLLOG {"namespace": "", "time_ms": 1726881824119, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.674239456653595, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.1}}
+:::MLLOG {"namespace": "", "time_ms": 1726881824119, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.1, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.1}}
+:::MLLOG {"namespace": "", "time_ms": 1726881828187, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.15, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.15}}
+:::MLLOG {"namespace": "", "time_ms": 1726881828833, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.6842349767684937, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.15}}
+:::MLLOG {"namespace": "", "time_ms": 1726881828834, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.15, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.15}}
+:::MLLOG {"namespace": "", "time_ms": 1726881832908, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.2, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.2}}
+:::MLLOG {"namespace": "", "time_ms": 1726881833548, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.6895333528518677, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.2}}
+:::MLLOG {"namespace": "", "time_ms": 1726881833548, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.2, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.2}}
+:::MLLOG {"namespace": "", "time_ms": 1726881837584, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.25, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.25}}
+:::MLLOG {"namespace": "", "time_ms": 1726881838194, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.6946808099746704, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.25}}
+:::MLLOG {"namespace": "", "time_ms": 1726881838194, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.25, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.25}}
+:::MLLOG {"namespace": "", "time_ms": 1726881842232, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.3, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881842841, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.6991711854934692, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881842841, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.3, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.3}}
+:::MLLOG {"namespace": "", "time_ms": 1726881846894, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.35, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.35}}
+:::MLLOG {"namespace": "", "time_ms": 1726881847488, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7022585868835449, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.35}}
+:::MLLOG {"namespace": "", "time_ms": 1726881847488, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.35, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.35}}
+:::MLLOG {"namespace": "", "time_ms": 1726881851505, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.4, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.4}}
+:::MLLOG {"namespace": "", "time_ms": 1726881852092, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7059194445610046, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.4}}
+:::MLLOG {"namespace": "", "time_ms": 1726881852093, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.4, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.4}}
+:::MLLOG {"namespace": "", "time_ms": 1726881856122, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.45, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.45}}
+:::MLLOG {"namespace": "", "time_ms": 1726881856717, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7066792845726013, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.45}}
+:::MLLOG {"namespace": "", "time_ms": 1726881856717, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.45, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.45}}
+:::MLLOG {"namespace": "", "time_ms": 1726881860745, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.5, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.5}}
+:::MLLOG {"namespace": "", "time_ms": 1726881861326, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.707714319229126, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.5}}
+:::MLLOG {"namespace": "", "time_ms": 1726881861326, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.5, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.5}}
+:::MLLOG {"namespace": "", "time_ms": 1726881865399, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.55, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.55}}
+:::MLLOG {"namespace": "", "time_ms": 1726881865991, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7103235125541687, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.55}}
+:::MLLOG {"namespace": "", "time_ms": 1726881865991, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.55, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.55}}
+:::MLLOG {"namespace": "", "time_ms": 1726881870044, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.6, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.6}}
+:::MLLOG {"namespace": "", "time_ms": 1726881870612, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7122554779052734, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.6}}
+:::MLLOG {"namespace": "", "time_ms": 1726881870613, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.6, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.6}}
+:::MLLOG {"namespace": "", "time_ms": 1726881874628, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.65, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.65}}
+:::MLLOG {"namespace": "", "time_ms": 1726881875227, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.712516725063324, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.65}}
+:::MLLOG {"namespace": "", "time_ms": 1726881875227, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.65, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.65}}
+:::MLLOG {"namespace": "", "time_ms": 1726881879201, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.7, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.7}}
+:::MLLOG {"namespace": "", "time_ms": 1726881879814, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.713248610496521, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.7}}
+:::MLLOG {"namespace": "", "time_ms": 1726881879814, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.7, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.7}}
+:::MLLOG {"namespace": "", "time_ms": 1726881883893, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.75, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.75}}
+:::MLLOG {"namespace": "", "time_ms": 1726881884441, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7143509984016418, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.75}}
+:::MLLOG {"namespace": "", "time_ms": 1726881884441, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.75, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.75}}
+:::MLLOG {"namespace": "", "time_ms": 1726881888434, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.8, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.8}}
+:::MLLOG {"namespace": "", "time_ms": 1726881888990, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7159225940704346, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.8}}
+:::MLLOG {"namespace": "", "time_ms": 1726881888990, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.8, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.8}}
+:::MLLOG {"namespace": "", "time_ms": 1726881893004, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.85, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.85}}
+:::MLLOG {"namespace": "", "time_ms": 1726881893611, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7166646122932434, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.85}}
+:::MLLOG {"namespace": "", "time_ms": 1726881893612, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.85, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.85}}
+:::MLLOG {"namespace": "", "time_ms": 1726881897608, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.9, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.9}}
+:::MLLOG {"namespace": "", "time_ms": 1726881898142, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7173128724098206, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.9}}
+:::MLLOG {"namespace": "", "time_ms": 1726881898142, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.9, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.9}}
+:::MLLOG {"namespace": "", "time_ms": 1726881902169, "event_type": "INTERVAL_START", "key": "eval_start", "value": 0.95, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 0.95}}
+:::MLLOG {"namespace": "", "time_ms": 1726881902745, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7176160216331482, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 0.95}}
+:::MLLOG {"namespace": "", "time_ms": 1726881902745, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 0.95, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 0.95}}
+:::MLLOG {"namespace": "", "time_ms": 1726881906714, "event_type": "INTERVAL_START", "key": "eval_start", "value": 1.0, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 1.0}}
+:::MLLOG {"namespace": "", "time_ms": 1726881907254, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7180155515670776, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 1.0}}
+:::MLLOG {"namespace": "", "time_ms": 1726881907254, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 1.0, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 1.0}}
+:::MLLOG {"namespace": "", "time_ms": 1726881907532, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"train_time": 1.55, "throughput": 1016865.0322580645, "train_accuracy": 0.6922804713249207}, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 1120, "epoch_num": 1.0}}
+:::MLLOG {"namespace": "", "time_ms": 1726881907533, "event_type": "INTERVAL_START", "key": "eval_start", "value": 1, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1726881908075, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7177034616470337, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1726881908075, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 1, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 1}}
+:::MLLOG {"namespace": "", "time_ms": 1726881908076, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 1170, "epoch_num": 1.0}}
+:::MLLOG {"namespace": "", "time_ms": 1726881908076, "event_type": "INTERVAL_START", "key": "epoch_start", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 1080, "epoch_num": 2}}
+:::MLLOG {"namespace": "", "time_ms": 1726881912206, "event_type": "INTERVAL_START", "key": "eval_start", "value": 1.05, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 1.05}}
+:::MLLOG {"namespace": "", "time_ms": 1726881912736, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7188007235527039, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 1.05}}
+:::MLLOG {"namespace": "", "time_ms": 1726881912736, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 1.05, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 1.05}}
+:::MLLOG {"namespace": "", "time_ms": 1726881916814, "event_type": "INTERVAL_START", "key": "eval_start", "value": 1.1, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 1.1}}
+:::MLLOG {"namespace": "", "time_ms": 1726881917345, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7194172143936157, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 1.1}}
+:::MLLOG {"namespace": "", "time_ms": 1726881917346, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 1.1, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 1.1}}
+:::MLLOG {"namespace": "", "time_ms": 1726881921380, "event_type": "INTERVAL_START", "key": "eval_start", "value": 1.15, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 729, "epoch_num": 1.15}}
+:::MLLOG {"namespace": "", "time_ms": 1726881921930, "event_type": "POINT_IN_TIME", "key": "eval_accuracy", "value": 0.7206222414970398, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 794, "epoch_num": 1.15}}
+:::MLLOG {"namespace": "", "time_ms": 1726881921930, "event_type": "INTERVAL_END", "key": "eval_stop", "value": 1.15, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 800, "epoch_num": 1.15}}
+:::MLLOG {"namespace": "", "time_ms": 1726881921932, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"train_time": 0.22, "throughput": 1083864.6153846155, "train_accuracy": 0.7181105017662048}, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 1120, "epoch_num": 1.15}}
+:::MLLOG {"namespace": "", "time_ms": 1726881921932, "event_type": "INTERVAL_END", "key": "epoch_stop", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 1129, "epoch_num": 1.15}}
+:::MLLOG {"namespace": "", "time_ms": 1726881921932, "event_type": "POINT_IN_TIME", "key": "tracked_stats", "value": {"walltime": 1.78}, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 1188, "epoch_num": 1.15}}
+:::MLLOG {"namespace": "", "time_ms": 1726881921932, "event_type": "INTERVAL_END", "key": "run_stop", "value": null, "metadata": {"file": "/workspace/gnn/train.py", "lineno": 1192, "status": "success", "epoch_num": 1.15}}
+:::MLLOG {"namespace": "", "time_ms": 1726881921932, "event_type": "POINT_IN_TIME", "key": "status", "value": "success", "metadata": {"file": "/workspace/gnn/train.py", "lineno": 1193, "status": "success", "epoch_num": 1.15}}

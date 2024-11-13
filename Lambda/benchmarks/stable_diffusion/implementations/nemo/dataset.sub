@@ -1,0 +1,59 @@
+#!/bin/bash
+#SBATCH --job-name=dataset
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gpus-per-node=8
+#SBATCH --exclusive
+#SBATCH --nodelist=ml-512-node-057,ml-512-node-058,ml-512-node-059,ml-512-node-060    # Specific nodes
+
+echo ${DATAPATH}
+
+_cont_mounts="\
+${DATAPATH}:/datasets,\
+${DATAPATH}:/checkpoints,\
+/dev/infiniband/uverbs0:/dev/infiniband/uverbs0,\
+/dev/infiniband/uverbs1:/dev/infiniband/uverbs1,\
+/dev/infiniband/uverbs2:/dev/infiniband/uverbs2,\
+/dev/infiniband/uverbs3:/dev/infiniband/uverbs3,\
+/dev/infiniband/uverbs4:/dev/infiniband/uverbs4,\
+/dev/infiniband/uverbs5:/dev/infiniband/uverbs5,\
+/dev/infiniband/uverbs6:/dev/infiniband/uverbs6,\
+/dev/infiniband/uverbs7:/dev/infiniband/uverbs7"
+
+export NCCL_DEBUG=INFO
+export NCCL_P2P_LEVEL=NVL
+export NCCL_NET_GDR_LEVEL=1
+export NCCL_IB_HCA='=mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_5,mlx5_6,mlx5_7'
+export NCCL_IB_PCI_RELAXED_ORDERING=1
+
+
+export HOME=/home/ubuntu
+
+CONT="local/mlperf-nvidia-stable_diffusion-pyt:latest"
+
+echo $HEADNODE_HOSTNAME
+
+srun -l --mpi="pmix" \
+     --container-image="${HEADNODE_HOSTNAME}:5000#${CONT}" \
+     --container-mounts=${_cont_mounts} \
+     /bin/bash -c "ulimit -n 65536 && bash ./scripts/datasets/laion400m-filtered-download-moments.sh --output-dir /datasets/laion-400m/webdataset-moments-filtered"
+
+srun -l --mpi="pmix" \
+     --container-image="${HEADNODE_HOSTNAME}:5000#${CONT}" \
+     --container-mounts=${_cont_mounts} \
+     /bin/bash -c "ulimit -n 65536 && bash ./scripts/datasets/coco2014-validation-download-prompts.sh --output-dir /datasets/coco2014"
+
+srun -l --mpi="pmix" \
+     --container-image="${HEADNODE_HOSTNAME}:5000#${CONT}" \
+     --container-mounts=${_cont_mounts} \
+     /bin/bash -c "ulimit -n 65536 && bash ./scripts/datasets/coco2014-validation-download-stats.sh --output-dir /datasets/coco2014 && mv /datasets/coco2014/val2014_30k_stats.npz /datasets/coco2014/val2014_512x512_30k_stats.npz"
+
+srun -l --mpi="pmix" \
+     --container-image="${HEADNODE_HOSTNAME}:5000#${CONT}" \
+     --container-mounts=${_cont_mounts} \
+     /bin/bash -c "ulimit -n 65536 && bash ./scripts/checkpoints/download_sd.sh --output-dir /datasets/sd && bash ./scripts/checkpoints/download_inception.sh --output-dir /datasets/inception && bash ./scripts/checkpoints/download_clip.sh --output-dir /datasets/clip"
+
+srun -l --mpi="pmix" \
+     --container-image="${HEADNODE_HOSTNAME}:5000#${CONT}" \
+     --container-mounts=${_cont_mounts} \
+     /bin/bash -c "ulimit -n 65536 && bash ./scripts/datasets/laion400m-encode-captions.sh"

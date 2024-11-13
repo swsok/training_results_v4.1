@@ -1,0 +1,154 @@
+INFO -  Checking System Description Files
+INFO -   System description checker passed for Dell Precision 7920 Tower with 2x A5000 using HDD
+INFO -   System description checker passed for Dell Precision 7920 Tower with 2x A5000 using SSD
+INFO - ------------------------------
+INFO -  Running compliance checks in dir ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert
+INFO -  System 7920T_2xA5000_ssd
+INFO -  Benchmark bert
+INFO - ------------------------------
+INFO - ------------------------------
+INFO - Run 1/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert/result_0.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 2/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert/result_1.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 3/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert/result_2.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 4/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert/result_3.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 5/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert/result_4.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 6/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert/result_5.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 7/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert/result_6.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 8/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert/result_7.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 9/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert/result_8.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 10/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_ssd/bert/result_9.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO -  Running Seed Checker
+INFO - ------------------------------
+INFO -  Running RCP Checker, pass: pruned_rcps
+INFO - ------------------------------
+INFO -  RCP Record: {'Benchmark': 'bert', 'BS': 448, 'Hyperparams': {'opt_base_learning_rate': 0.000425, 'opt_epsilon': 1e-06, 'opt_learning_rate_training_steps': 6700, 'num_warmup_steps': 0, 'start_warmup_step': 0, 'opt_lamb_beta_1': 0.9, 'opt_lamb_beta_2': 0.999, 'opt_lamb_weight_decay_rate': 0.01, 'gradient_accumulation_steps': 1}, 'Epochs to converge': [1981952, 2107392, 2132480, 2157568, 2182656, 2333184, 2333184, 2358272, 2358272, 2358272, 2408448, 2408448, 2433536, 2458624, 2483712, 2533888, 2533888, 2558976, 2584064, 2584064, 2684416, 2709504, 2759680], 'RCP Mean': 2414421.3333333335, 'RCP Stdev': 197392.47653603306, 'Max Speedup': 1.0614091253440932, 'Min Epochs': 2274732.0290379203}
+INFO -  Submission mean epochs: 3417208.0000
+INFO - RCP Test Passed: RCP found
+INFO - ------------------------------
+INFO - ------------------------------
+INFO -  Running compliance checks in dir ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert
+INFO -  System 7920T_2xA5000_hdd
+INFO -  Benchmark bert
+INFO - ------------------------------
+INFO - ------------------------------
+INFO - Run 1/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert/result_0.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 2/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert/result_1.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 3/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert/result_2.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 4/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert/result_3.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 5/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert/result_4.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 6/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert/result_5.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 7/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert/result_6.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 8/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert/result_7.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 9/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert/result_8.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 10/10
+INFO - Running compliance on file: ../training_results_v4.1_Krai/results/7920T_2xA5000_hdd/bert/result_9.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO -  Running Seed Checker
+INFO - ------------------------------
+INFO -  Running RCP Checker, pass: pruned_rcps
+INFO - ------------------------------
+INFO -  RCP Record: {'Benchmark': 'bert', 'BS': 448, 'Hyperparams': {'opt_base_learning_rate': 0.000425, 'opt_epsilon': 1e-06, 'opt_learning_rate_training_steps': 6700, 'num_warmup_steps': 0, 'start_warmup_step': 0, 'opt_lamb_beta_1': 0.9, 'opt_lamb_beta_2': 0.999, 'opt_lamb_weight_decay_rate': 0.01, 'gradient_accumulation_steps': 1}, 'Epochs to converge': [1981952, 2107392, 2132480, 2157568, 2182656, 2333184, 2333184, 2358272, 2358272, 2358272, 2408448, 2408448, 2433536, 2458624, 2483712, 2533888, 2533888, 2558976, 2584064, 2584064, 2684416, 2709504, 2759680], 'RCP Mean': 2414421.3333333335, 'RCP Stdev': 197392.47653603306, 'Max Speedup': 1.0614091253440932, 'Min Epochs': 2274732.0290379203}
+INFO -  Submission mean epochs: 3643896.0000
+INFO - RCP Test Passed: RCP found
+INFO - ------------------------------
+INFO - ------------------------------
+INFO - PACKAGE CHECKER FOUND NO ERRORS, SUCCESS !
+INFO - ------------------------------

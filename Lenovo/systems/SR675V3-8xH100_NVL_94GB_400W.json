@@ -1,0 +1,40 @@
+{
+    "submitter": "Lenovo",
+    "division": "closed",
+    "status": "Available on-premise",
+    "system_name": "ThinkSystem SR675 V3 with 8x H100-NVL-94GB",
+    "number_of_nodes": "1",
+    "host_processors_per_node": "2",
+    "host_processor_model_name": "AMD EPYC 9634 84-Core Processor",
+    "host_processor_core_count": "84",
+    "host_processor_vcpu_count": "",
+    "host_processor_frequency": "",
+    "host_processor_caches": "N/A",
+    "host_processor_interconnect": "",
+    "host_memory_capacity": "3.0 TiB",
+    "host_storage_type": "NVMe, SSD",
+    "host_storage_capacity": "10 TB",
+    "host_networking": "",
+    "host_networking_topology": "N/A",
+    "host_memory_configuration": "24 x 128GB DDR5 4800 MHz",
+    "accelerators_per_node": "8",
+    "accelerator_model_name": "H100 NVL Tensor Core GPU (PCIe)",
+    "accelerator_host_interconnect": "",
+    "accelerator_frequency": "",
+    "accelerator_on-chip_memories": "N/A",
+    "accelerator_memory_configuration":  "HBM3",
+    "accelerator_memory_capacity"       : "94 GB",
+    "accelerator_interconnect"          : "18x 4th Gen NVLink, 600GB/s",
+    "accelerator_interconnect_topology" : "N/A",
+    "cooling"                           : "Air-cooled",
+    "hw_notes"                          : "GPU TDP:400W",
+    "framework"                         : "PyTorch NVIDIA Release 23.09",
+    "other_software_stack"              : [
+    {
+        "cuda_version": "12.6",
+        "cuda_driver_version": "560.35.03"
+    }
+    ],
+    "operating_system"                  : "Ubuntu 22.04.4 LTS",
+    "sw_notes"                          : ""
+}

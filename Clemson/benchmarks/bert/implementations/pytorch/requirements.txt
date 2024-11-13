@@ -1,0 +1,15 @@
+# progress bars in model download and training scripts
+boto3==1.14.0
+gdown==4.4.0
+git+https://github.com/mlcommons/logging.git@4.0.0-rc2
+h5py
+html2text==2020.1.16
+ipdb==0.13.2
+nltk==3.5
+onnxruntime
+parameterized
+progressbar==2.5
+requests==2.23.0
+six==1.15.0
+tensorflow
+git+https://github.com/noahnisbet/mlperf-common.git

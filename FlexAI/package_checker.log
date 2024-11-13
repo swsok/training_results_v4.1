@@ -1,0 +1,81 @@
+INFO -  Checking System Description Files
+INFO -   System description checker passed for TEST.H100.8
+INFO - ------------------------------
+INFO -  Running compliance checks in dir output/results/TEST.H100.8.nvidia_impl/bert
+INFO -  System TEST.H100.8.nvidia_impl
+INFO -  Benchmark bert
+INFO - ------------------------------
+INFO - ------------------------------
+INFO - Run 1/10
+INFO - Running compliance on file: output/results/TEST.H100.8.nvidia_impl/bert/result_1.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 2/10
+INFO - Running compliance on file: output/results/TEST.H100.8.nvidia_impl/bert/result_10.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 3/10
+INFO - Running compliance on file: output/results/TEST.H100.8.nvidia_impl/bert/result_2.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 4/10
+INFO - Running compliance on file: output/results/TEST.H100.8.nvidia_impl/bert/result_3.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 5/10
+INFO - Running compliance on file: output/results/TEST.H100.8.nvidia_impl/bert/result_4.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 6/10
+INFO - Running compliance on file: output/results/TEST.H100.8.nvidia_impl/bert/result_5.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 7/10
+INFO - Running compliance on file: output/results/TEST.H100.8.nvidia_impl/bert/result_6.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 8/10
+INFO - Running compliance on file: output/results/TEST.H100.8.nvidia_impl/bert/result_7.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 9/10
+INFO - Running compliance on file: output/results/TEST.H100.8.nvidia_impl/bert/result_8.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO - Run 10/10
+INFO - Running compliance on file: output/results/TEST.H100.8.nvidia_impl/bert/result_9.txt
+INFO -  Compliance checks: training_4.1.0/common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_common.yaml
+INFO -  Compliance checks: training_4.1.0/closed_bert.yaml
+INFO - ------------------------------
+INFO -  Running Seed Checker
+INFO - ------------------------------
+INFO -  Running RCP Checker, pass: pruned_rcps
+INFO - ------------------------------
+INFO -  RCP Record: {'Benchmark': 'bert', 'BS': 768, 'Hyperparams': {}, 'Epochs to converge': [], 'RCP Mean': np.float64(2443933.5384615385), 'RCP Stdev': np.float64(192282.57105342922), 'Max Speedup': np.float64(1.0594760978154003), 'Min Epochs': np.float64(2306737.776813311)}
+INFO -  Submission mean epochs: 2436597.7500
+INFO -  Submission mean epochs faster than RCP mean but within max speedup range. Score should be normalized by factor of 2443933.5384615385 / 2436597.75 = 1.003010668651212
+INFO -  Results scaling set to normalization factor of 1.0030
+INFO - RCP Test Passed: RCP Interpolation
+INFO - ------------------------------
+INFO - ------------------------------
+INFO - PACKAGE CHECKER FOUND NO ERRORS, SUCCESS !
+INFO - ------------------------------

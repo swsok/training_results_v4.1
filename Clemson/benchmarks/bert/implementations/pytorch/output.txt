@@ -1,0 +1,444 @@
++ module purge
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ module load openmpi/4.1.6
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ module list
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+
+Currently Loaded Modules:
+  1) openmpi/4.1.6
+
+ 
+
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ source packed_config_16xR750xax2A100-80GB-PCIe.sh
+++ export BATCHSIZE=48
+++ BATCHSIZE=48
+++ export GRADIENT_STEPS=1
+++ GRADIENT_STEPS=1
+++ export LR=0.002
+++ LR=0.002
+++ export MAX_SAMPLES_TERMINATION=4500000
+++ MAX_SAMPLES_TERMINATION=4500000
+++ export MAX_STEPS=2254
+++ MAX_STEPS=2254
+++ export OPT_LAMB_BETA_1=0.66
+++ OPT_LAMB_BETA_1=0.66
+++ export OPT_LAMB_BETA_2=0.996
+++ OPT_LAMB_BETA_2=0.996
+++ export START_WARMUP_STEP=0
+++ START_WARMUP_STEP=0
+++ export WARMUP_PROPORTION=0.0
+++ WARMUP_PROPORTION=0.0
+++ export WEIGHT_DECAY_RATE=0.01
+++ WEIGHT_DECAY_RATE=0.01
+++ export INIT_LOSS_SCALE=4096.0
+++ INIT_LOSS_SCALE=4096.0
+++ export 'EXTRA_PARAMS=--dense_seq_output --pad_fmha --fused_bias_fc --fused_bias_mha --fused_dropout_add --fused_gemm_gelu --packed_samples --cuda_graph_mode '\''segmented'\'' '
+++ EXTRA_PARAMS='--dense_seq_output --pad_fmha --fused_bias_fc --fused_bias_mha --fused_dropout_add --fused_gemm_gelu --packed_samples --cuda_graph_mode '\''segmented'\'' '
+++ export PHASE=2
+++ PHASE=2
+++ export EVAL_ITER_START_SAMPLES=175000
+++ EVAL_ITER_START_SAMPLES=175000
+++ export EVAL_ITER_SAMPLES=175000
+++ EVAL_ITER_SAMPLES=175000
+++ export DGXNNODES=2
+++ DGXNNODES=2
++++ sed 's/^config_//'
++++ sed 's/\.sh$//'
+++++ readlink -f packed_config_16xR750xax2A100-80GB-PCIe.sh
++++ basename /project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/bert/pytorch/packed_config_16xR750xax2A100-80GB-PCIe.sh
+++ export DGXSYSTEM=packed_config_16xR750xax2A100-80GB-PCIe
+++ DGXSYSTEM=packed_config_16xR750xax2A100-80GB-PCIe
+++ export WALLTIME=01:15:00
+++ WALLTIME=01:15:00
+++ export DGXNGPU=1
+++ DGXNGPU=1
+++ export 'MLPERF_SUBMISSION_ORG=Clemson Research Computing and Data'
+++ MLPERF_SUBMISSION_ORG='Clemson Research Computing and Data'
+++ export MLPERF_SUBMISSION_PLATFORM=packed_config_16xR750xax2A100-80GB-PCIe
+++ MLPERF_SUBMISSION_PLATFORM=packed_config_16xR750xax2A100-80GB-PCIe
+++ export OMP_NUM_THREADS=8
+++ OMP_NUM_THREADS=8
+++ NCCL_SOCKET_IFNAME=hfi1_0
++ export CONT=/scratch/nnisbet/mlperf_hpc-bert_latest.sif
++ CONT=/scratch/nnisbet/mlperf_hpc-bert_latest.sif
++ export LOGDIR=/project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/results/bert
++ LOGDIR=/project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/results/bert
++ export NEXP=10
++ NEXP=10
++ export DATAPATH=/project/rcde/mlperf_data/bert
++ DATAPATH=/project/rcde/mlperf_data/bert
++ export DATADIR=/project/rcde/mlperf_data/bert/packed_data_hdf5
++ DATADIR=/project/rcde/mlperf_data/bert/packed_data_hdf5
++ export EVALDIR=/project/rcde/mlperf_data/bert/hdf5/eval_varlength/
++ EVALDIR=/project/rcde/mlperf_data/bert/hdf5/eval_varlength/
++ export DATADIR_PHASE2=/project/rcde/mlperf_data/bert/packed_data_hdf5
++ DATADIR_PHASE2=/project/rcde/mlperf_data/bert/packed_data_hdf5
++ export CHECKPOINTDIR_PHASE1=/project/rcde/mlperf_data/bert/phase1/
++ CHECKPOINTDIR_PHASE1=/project/rcde/mlperf_data/bert/phase1/
++ export CHECKPOINTDIR=/project/rcde/mlperf_data/bert/phase1/
++ CHECKPOINTDIR=/project/rcde/mlperf_data/bert/phase1/
++ : /scratch/nnisbet/mlperf_hpc-bert_latest.sif
++ : packed_config_16xR750xax2A100-80GB-PCIe
++ : 10
++ : 2.1.0
++ : ./api_logs
++ : 0
++ : 1
+++ basename /scratch/nnisbet/mlperf_hpc-bert_latest.sif
++ : /lustre/fsw/containers/272162_mlperf_hpc-bert_latest.sif.squashfs
++ : 0
+++ date +%y%m%d%H%M%S%N
++ : 240710154447122060855
++ : 1
++ : /project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/results/bert
++ : /project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/bert/pytorch/results
++ : ''\'' '\'''
++ : ''
++ : 0
++ : 0
++ : 1
++ : 0
++ : 0
++ : 0
++ : /workspace/bert
+++ scontrol show hostnames 'nodeai[01,05]'
+++ head -n1
++ export MLPERF_SLURM_FIRSTNODE=nodeai01
++ MLPERF_SLURM_FIRSTNODE=nodeai01
++ export MODEL_NAME=language_model
++ MODEL_NAME=language_model
++ export MODEL_FRAMEWORK=pytorch
++ MODEL_FRAMEWORK=pytorch
++ readonly _cont_name=language_model_272162
++ _cont_name=language_model_272162
++ LOG_BASE=240710154447122060855
++ SPREFIX=language_model_pytorch_2x1x48_240710154447122060855
++ '[' 0 -gt 0 ']'
++ '[' 0 -gt 0 ']'
++ '[' 0 -gt 0 ']'
++ '[' 0 -gt 0 ']'
++ '[' 0 -gt 0 ']'
++ '[' 0 -gt 0 ']'
++ '[' 0 -gt 0 ']'
++ readonly LOG_FILE_BASE=/project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/results/bert/240710154447122060855
++ LOG_FILE_BASE=/project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/results/bert/240710154447122060855
++ CONT_FILE=/scratch/nnisbet/mlperf_hpc-bert_latest.sif
++ echo 'CI directory structure\n'
+CI directory structure\n
+++ ls
++ echo bmm1.py bmm2.py cleanup_scripts config_DGXA100_common.sh config_DGXH100_8x8x72x1.sh convert_tf_checkpoint.py Dockerfile extract_features.py file_utils.py fmha.py function.py fwd_loss_bwd_trainer.py inference.py input_preprocessing LICENSE mhalib mha.py mlperf_logger.py model modeling.py NOTICE optimization.py output.txt packed_config_16xR750xax2A100-80GB-PCIe.sh padding.py __pycache__ README-eos_n8_ngc23.04_pytorch.md README.md requirements.txt results run_and_time.sh run_pretraining.py run_squad.py run.sub run_test.sh scaleoutbridge.py schedulers.py scripts softmax.py te_layers.py tokenization.py unit_test utils.py
+bmm1.py bmm2.py cleanup_scripts config_DGXA100_common.sh config_DGXH100_8x8x72x1.sh convert_tf_checkpoint.py Dockerfile extract_features.py file_utils.py fmha.py function.py fwd_loss_bwd_trainer.py inference.py input_preprocessing LICENSE mhalib mha.py mlperf_logger.py model modeling.py NOTICE optimization.py output.txt packed_config_16xR750xax2A100-80GB-PCIe.sh padding.py __pycache__ README-eos_n8_ngc23.04_pytorch.md README.md requirements.txt results run_and_time.sh run_pretraining.py run_squad.py run.sub run_test.sh scaleoutbridge.py schedulers.py scripts softmax.py te_layers.py tokenization.py unit_test utils.py
++ CONT_MOUNTS=/project/rcde/mlperf_data/bert/packed_data_hdf5:/workspace/data_phase2,/project/rcde/mlperf_data/bert/phase1/:/workspace/phase1,/project/rcde/mlperf_data/bert/hdf5/eval_varlength/:/workspace/evaldata,/project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/results/bert:/results
++ [[ 0 -gt 0 ]]
++ '[' 0 -eq 1 ']'
++ umask 0002
++ mkdir -p /project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/results/bert
+++ scontrol show hostnames 'nodeai[01,05]'
++ NODELIST='nodeai01
+nodeai05'
++ NODELIST=(${NODELIST[*]})
++ '[' -f ''\'' '\''/power_monitor.sh' ']'
+++ seq -w 1 10
++ for _experiment_index in $(seq -w 1 "${NEXP}")
++ tee /project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/results/bert/240710154447122060855_01.log
++ echo 'Beginning trial 01 of 10'
+Beginning trial 01 of 10
++ echo ':::DLPAL /scratch/nnisbet/mlperf_hpc-bert_latest.sif 272162 2 nodeai[01,05]'
+:::DLPAL /scratch/nnisbet/mlperf_hpc-bert_latest.sif 272162 2 nodeai[01,05]
++ '[' 1 -eq 1 ']'
+++ hostname
++ echo 'Clearing cache on nodeai01.palmetto.clemson.edu'
+Clearing cache on nodeai01.palmetto.clemson.edu
++ srun -l --ntasks=2 --ntasks-per-node=1 apptainer exec --nv -B /project/rcde/mlperf_data/bert/packed_data_hdf5:/workspace/data_phase2,/project/rcde/mlperf_data/bert/phase1/:/workspace/phase1,/project/rcde/mlperf_data/bert/hdf5/eval_varlength/:/workspace/evaldata,/project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/results/bert:/results -B /project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/bert/pytorch:/workspace/bert /scratch/nnisbet/mlperf_hpc-bert_latest.sif bash ./run_and_time.sh
+0: 13:4: not a valid test operator: (
+0: 13:4: not a valid test operator: 550.54.15
+1: 13:4: not a valid test operator: (
+1: 13:4: not a valid test operator: 550.54.15
+0: Run vars: id 272162 gpus 1 mparams ''
+0: STARTING TIMING RUN AT 2024-07-10 03:44:48 PM
+1: Run vars: id 272162 gpus 1 mparams ''
+1: STARTING TIMING RUN AT 2024-07-10 03:44:48 PM
+1: /usr/local/lib/python3.10/dist-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+1:   warnings.warn(msg, DeprecatedFeatureWarning)
+0: /usr/local/lib/python3.10/dist-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+0:   warnings.warn(msg, DeprecatedFeatureWarning)
+1: 2024-07-10 15:44:54.405017: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+0: 2024-07-10 15:44:54.504698: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+1: 2024-07-10 15:44:54.983646: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+1: 2024-07-10 15:44:54.983696: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+0: 2024-07-10 15:44:55.080458: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+0: 2024-07-10 15:44:55.080500: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+1: 2024-07-10 15:44:55.087945: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+0: 2024-07-10 15:44:55.184360: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+1: 2024-07-10 15:44:55.295207: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+1: To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+0: 2024-07-10 15:44:55.390837: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+0: To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+1: :::MLLOG {"namespace": "", "time_ms": 1720640698659, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1263}}
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: :::MLLOG {"namespace": "", "time_ms": 1720640698772, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1263}}
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+1: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+0: [W socket.cpp:653] [c10d] The IPv6 network addresses of (nodeai[01,05], 53394) cannot be retrieved (gai error: -2 - Name or service not known).
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 272162 ON nodeai01 CANCELLED AT 2024-07-10T15:46:57 ***
+0: slurmstepd: error: *** STEP 272162.0 ON nodeai01 CANCELLED AT 2024-07-10T15:46:57 ***

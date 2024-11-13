@@ -1,0 +1,234 @@
+#!/bin/bash
+#SBATCH --mem=32GB
+
+# Copyright (c) 2019-2023 NVIDIA CORPORATION. All rights reserved.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+set -eux
+
+module purge
+module load openmpi/4.1.6
+module list
+source config_DGXH100_8x8x72x1.sh
+
+export DGXNGPU=8
+export CONT="/project/rcde/mlperf_data/bert/bert_latest.sif"
+
+export CONT="/scratch/nnisbet/bert/bert_latest.sif"
+export LOGDIR="/project/rcde/nnisbet/palmetto-mlperf-benchmarks/Training/results/bert"
+export NEXP=10
+export DATAPATH="/project/rcde/mlperf_data/bert"
+export DATADIR="${DATAPATH}/packed_data_hdf5"
+export EVALDIR="${DATAPATH}/hdf5/eval_varlength/"
+export DATADIR_PHASE2="${DATADIR}"
+export CHECKPOINTDIR_PHASE1="${DATAPATH}/phase1/tf2_ckpt/"
+export CHECKPOINTDIR="${CHECKPOINTDIR_PHASE1}"
+
+export OMPI_MCA_orte_tmpdir_base=""
+
+export DGXNNODES=6
+export SLURM_MPI_TYPE="pmix"
+export PMIX_MCA_gds=hash
+
+export NCCL_DEBUG=INFO
+#export NCCL_IB_GID_INDEX=3
+export NCCL_TEST=1
+#export NCCL_NET_GDR_LEVEL=1
+export PMIX_MCA_psec=native
+
+export NCCL_IB_HCA=mlx5_0:1,mlx5_3:1,mlx5_4:1,mlx5_5:1,mlx5_6:1,mlx5_9:1,mlx5_10:1,mlx5_11:1
+export MELLANOX_VISIBLE_DEVICES=mlx5_0:1,mlx5_3:1,mlx5_4:1,mlx5_5:1,mlx5_6:1,mlx5_9:1,mlx5_10:1,mlx5_11:1
+export UCX_NET_DEVICES=mlx5_0:1,mlx5_3:1,mlx5_4:1,mlx5_5:1,mlx5_6:1,mlx5_9:1,mlx5_10:1,mlx5_11:1
+export NCCL_SOCKET_IFNAME=ib0,ib3,ib4,ib5,ib6,ib7,ib8,ib9
+#export UCX_POSIX_USE_PROC_LINK=n
+export OMP_NUM_THREADS=1
+
+: '
+export SLURM_MPI_TYPE="pmix"
+export PMIX_MCA_psec=native
+
+export NCCL_DEBUG=INFO
+export NCCL_TEST=1
+export NCCL_IB_GID_INDEX=3
+
+export MELLANOX_VISIBLE_DEVICES="mlx5_0:1,mlx5_3:1,mlx5_4:1,mlx5_5:1,mlx5_6:1,mlx5_9:1,mlx5_10:1,mlx5_11:1"
+export NCCL_IB_HCA="mlx5_0:1,mlx5_3:1,mlx5_4:1,mlx5_5:1,mlx5_6:1,mlx5_9:1,mlx5_10:1,mlx5_11:1"
+export UCX_NET_DEVICES="mlx5_0:1,mlx5_3:1,mlx5_4:1,mlx5_5:1,mlx5_6:1,mlx5_9:1,mlx5_10:1,mlx5_11:1"
+export NCCL_SOCKET_IFNAME="ib0,ib3,ib4,ib5,ib6,ib7,ib8,ib9"
+export OMP_NUM_THREADS=12
+export UCX_POSIX_USE_PROC_LINK=n
+'
+
+# Vars without defaults
+: "${CONT:?CONT not set}"
+: "${DGXSYSTEM:?DGXSYSTEM not set}"
+: "${NEXP:?NEXP not set}"
+
+# Vars with defaults
+: "${MLPERF_RULESET:=4.0.0}"
+: "${API_LOG_DIR:=./api_logs}" # apiLog.sh output dir
+: "${API_LOGGING:=0}"
+: "${CLEAR_CACHES:=1}"
+: "${CONT_FILE:=/lustre/fsw/containers/${SLURM_JOBID}_$(basename ${CONT}).squashfs}"
+: "${CONTAINER_PRELOAD_LUSTRE:=0}"
+: "${DATESTAMP:=$(date +'%y%m%d%H%M%S%N')}"
+: "${CHECK_COMPLIANCE:=1}"
+: "${LOGDIR:=./results}"
+: "${ABSLOGDIR:=${PWD}/results}"
+: "${POWERCMDDIR:=' '}"
+: "${NSYSCMD:=""}"
+: "${NVTX_FLAG:=0}"
+: "${TIME_TAGS:=0}"
+: "${NCCL_TEST:=1}"
+: "${SYNTH_DATA:=0}"
+: "${EPOCH_PROF:=0}"
+: "${DISABLE_CG:=0}"
+: "${WORK_DIR:=/workspace/bert}"
+
+
+export MLPERF_SLURM_FIRSTNODE="$(scontrol show hostnames "${SLURM_JOB_NODELIST-}" | head -n1)"
+
+export MODEL_NAME="language_model"
+export MODEL_FRAMEWORK="pytorch"
+readonly _cont_name="${MODEL_NAME}_${SLURM_JOB_ID}"
+LOG_BASE="${DATESTAMP}"
+SPREFIX="${MODEL_NAME}_${MODEL_FRAMEWORK}_${DGXNNODES}x${DGXNGPU}x${BATCHSIZE}_${DATESTAMP}"
+
+if [ ${TIME_TAGS} -gt 0 ]; then
+    LOG_BASE="${SPREFIX}_mllog"
+fi
+if [ ${NVTX_FLAG} -gt 0 ]; then
+    if [[ "$LOG_BASE" == *'_'* ]];then
+        LOG_BASE="${LOG_BASE}_nsys"
+    else
+        LOG_BASE="${SPREFIX}_nsys"
+    fi
+
+    if [[ ! -d "${NVMLPERF_NSIGHT_LOCATION}" ]]; then
+	echo "$NVMLPERF_NSIGHT_LOCATION doesn't exist on this system!" 1>&2
+	exit 1
+    fi
+fi
+if [ ${SYNTH_DATA} -gt 0 ]; then
+    if [[ "$LOG_BASE" == *'_'* ]];then
+        LOG_BASE="${LOG_BASE}_synth"
+    else
+        LOG_BASE="${SPREFIX}_synth"
+    fi
+fi
+if [ ${EPOCH_PROF} -gt 0 ]; then
+    if [[ "$LOG_BASE" == *'_'* ]];then
+        LOG_BASE="${LOG_BASE}_epoch"
+    else
+        LOG_BASE="${SPREFIX}_epoch"
+    fi
+fi
+if [ ${DISABLE_CG} -gt 0 ]; then
+    EXTRA_PARAMS=$(echo $EXTRA_PARAMS | sed 's/--use_cuda_graph//')
+    if [[ "$LOG_BASE" == *'_'* ]];then
+        LOG_BASE="${LOG_BASE}_nocg"
+    else
+        LOG_BASE="${SPREFIX}_nocg"
+    fi
+fi
+
+if [ ${NVTX_FLAG--1} -gt 0 ] ||  [ ${TIME_TAGS--1} -gt 0 ]; then
+export MAX_STEPS=100
+fi
+
+readonly LOG_FILE_BASE="${LOGDIR}/${LOG_BASE}"
+
+
+CONT_FILE=${CONT}
+
+echo "CI directory structure\n"
+echo $(ls)
+
+CONT_MOUNTS="\
+${DATADIR_PHASE2}:/workspace/data_phase2,\
+${CHECKPOINTDIR_PHASE1}:/workspace/phase1/,\
+${EVALDIR}:/workspace/evaldata,\
+${LOGDIR}:/results"
+
+if [[ "${NVTX_FLAG}" -gt 0 ]]; then
+    CONT_MOUNTS="${CONT_MOUNTS},${NVMLPERF_NSIGHT_LOCATION}:/nsight"
+fi
+if [ "${API_LOGGING}" -eq 1 ]; then
+    API_LOG_DIR=${API_LOG_DIR}/${MODEL_FRAMEWORK}/${MODEL_NAME}/${DGXSYSTEM}
+    mkdir -p ${API_LOG_DIR}
+    CONT_MOUNTS="${CONT_MOUNTS},${API_LOG_DIR}:/logs"
+fi
+
+# Setup directories
+( umask 0002; mkdir -p "${LOGDIR}" )
+
+echo "NCCL_TEST = ${NCCL_TEST}"
+if [[ ${NCCL_TEST} -eq 1 ]]; then
+    (srun --cpus-per-task=13 --mpi=pmix --ntasks="$(( SLURM_JOB_NUM_NODES * DGXNGPU ))" --ntasks-per-node="${DGXNGPU}" \
+         apptainer exec --nv $CONT all_reduce_perf_mpi -b 21M -e 672M -d half -G 1 -f 2 ) |& tee "${LOGDIR}/${SPREFIX}_nccl.log"
+fi
+
+#ssh to nodes for power measurements
+NODELIST=$(scontrol show hostnames ${SLURM_JOB_NODELIST})
+NODELIST=(${NODELIST[*]})
+if [ -f "$POWERCMDDIR/power_monitor.sh"  ]; then
+    ( umask 0002; mkdir -p "${ABSLOGDIR}" )
+    for i in "${NODELIST[@]}"
+    do
+        ssh $i 'export NODENAME='"'$i'"';export ABSLOGDIR='"'$ABSLOGDIR'"';export SLURM_JOB_NODELIST='"'$SLURM_JOB_NODELIST'"';export SLURM_JOB_ID='"'$SLURM_JOB_ID'"';POWERCMDDIR='"'$POWERCMDDIR'"';bash ${POWERCMDDIR}/power_monitor.sh' &
+#	break
+    done
+fi 
+
+# Run experiments
+for _experiment_index in $(seq -w 1 "${NEXP}"); do
+    (
+        echo "Beginning trial ${_experiment_index} of ${NEXP}"
+	    echo ":::DLPAL ${CONT} ${SLURM_JOB_ID} ${SLURM_JOB_NUM_NODES} ${SLURM_JOB_NODELIST}"
+
+        # Clear caches
+        if [ "${CLEAR_CACHES}" -eq 1 ]; then
+            srun --ntasks="${SLURM_JOB_NUM_NODES}" bash -c "echo -n 'Clearing cache on ' && hostname && sync && sudo /sbin/sysctl vm.drop_caches=3"
+            srun --ntasks="${SLURM_JOB_NUM_NODES}" apptainer exec --nv $CONT python -c "
+from mlperf_logger import mllogger
+mllogger.event(key=mllogger.constants.CACHE_CLEAR, value=True)"
+	    echo "Clearing cache on $(hostname)"
+        fi
+
+        # Run experiment
+	srun -l --cpus-per-task=13 --mpi="${SLURM_MPI_TYPE:-pmix}" --ntasks-per-node="${DGXNGPU}" \
+	        --ntasks="$(( SLURM_JOB_NUM_NODES * DGXNGPU ))" \
+		apptainer exec --nv --writable-tmpfs \
+		-B "${CONT_MOUNTS}" \
+		-B "$PWD/run_pretraining.py:/workspace/bert/run_pretraining.py" \
+		-B "$PWD/te_layers.py:/workspace/bert/te_layers.py" \
+		-B "$PWD/run_and_time.sh:/workspace/bert/run_and_time.sh" \
+		$CONT bash -c "cd /workspace/bert/ ; bash slurm2pytorch ./run_and_time.sh"
+
+    ) |& tee "${LOG_FILE_BASE}_${_experiment_index}.log"
+        
+    # compliance checker
+    if [ "${CHECK_COMPLIANCE}" -eq 1 ]; then
+    cd ./results/
+    srun --ntasks=1 --nodes=1 apptainer exec --nv -B "$(realpath ${LOGDIR}):/results" \
+        $CONT \
+	python3 -m mlperf_logging.compliance_checker --usage training \
+        --ruleset "${MLPERF_RULESET}"                                 \
+        --log_output "/results/compliance_${DATESTAMP}.out"           \
+        "/results/${LOG_BASE}_${_experiment_index}.log" \
+    || true
+    cd ..
+    fi
+done
+
+# Cleanup: performed by cleanup_containers (see above) on EXIT trap

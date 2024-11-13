@@ -1,0 +1,190 @@
+#!/bin/bash
+
+#SBATCH --exclusive
+#SBATCH --mem=0
+#SBATCH -w node061
+
+set -eux
+
+echo "PROLOG_START $(date +%s)"
+
+# Vars without defaults
+: "${CONT:?CONT not set}"
+: "${DGXSYSTEM:?DGXSYSTEM not set}"
+: "${WALLTIME_RUNANDTIME:?WALLTIME_RUNANDTIME not set}"
+
+# Vars with defaults
+: "${CHECK_COMPLIANCE:=1}"
+: "${MLPERF_RULESET:=4.1.0}"
+: "${MLPERF_SYSTEM_NAME:='unknown'}"
+: "${MLPERF_SCALE:='unknown'}"
+: "${MLPERF_CLUSTER_NAME:='unknown'}"
+: "${DGXNGPU:=4}"
+: "${NEXP:=1}"
+: "${SEED_BASE:=${SEED-$RANDOM}}"
+: "${DATESTAMP:=$(date +'%y%m%d%H%M%S%N')}"
+: "${CLEAR_CACHES:=1}"
+: "${LOGDIR:=./results}"
+: "${DROPCACHE_CMD:="sudo /sbin/sysctl vm.drop_caches=3"}"
+: "${API_LOG_DIR:=./api_logs}"
+: "${API_LOGGING:=0}"
+: "${ABSLOGDIR:=${PWD}/results}"
+: "${POWERCMDDIR:=' '}"
+: "${SET_MAXQ_CLK:=0}"
+: "${SET_MINEDP_CLK:=0}"
+: "${NCCL_TEST:=1}"
+: "${NVTX_FLAG:=0}"
+: "${ENABLE_CPU_EXCLUSIVE:=0}"
+: "${MASTER_PORT:=29500}"
+: "${PYTHONPATH:=}"
+
+export MASTER_PORT
+export MASTER_ADDR="$(scontrol show hostnames "${SLURM_JOB_NODELIST-}" | head -n1)"
+echo "using MASTER_ADDR \"${MASTER_ADDR}\" of list \"${SLURM_JOB_NODELIST}\""
+
+cleanup_pyxis() {
+    srun --ntasks="${SLURM_JOB_NUM_NODES}" /bin/bash -c 'if [[ "$(enroot list)" ]]; then enroot remove -f $(enroot list); fi'
+}
+trap cleanup_pyxis TERM EXIT
+cleanup_pyxis
+
+export MODEL_NAME="llama2_70b_lora"
+export MODEL_FRAMEWORK="pytorch"
+LOGBASE="${DATESTAMP}"
+SPREFIX="${MODEL_NAME}_${MODEL_FRAMEWORK}_${DGXNNODES}x${DGXNGPU}x${MINIBS}_${DATESTAMP}"
+readonly _logfile_base="${LOGDIR}/${DATESTAMP}"
+readonly _cont_name="${MODEL_NAME}_${SLURM_JOB_ID}"
+readonly _seed_override=${SEED:-}
+_cont_mounts="${DATADIR}:/data:rw,${MODEL}:/ckpt:rw,${LOGDIR}:/results:rw"
+cont_mounts_to_verify="'/data', '/ckpt'"
+
+if [ ${NVTX_FLAG} -gt 0 ]; then
+    if [[ "$LOGBASE" == *'_'* ]];then
+        LOGBASE="${LOGBASE}_nsys"
+    else
+        LOGBASE="${SPREFIX}_nsys"
+    fi
+fi
+
+# Cleanup data index dir
+rm -rf "${LOGDIR}/data_index/train" "${LOGDIR}/data_index/val"
+mkdir -p "${LOGDIR}/data_index/train" "${LOGDIR}/data_index/val"
+
+if [ "${API_LOGGING:-}" -eq 1 ]; then
+    API_LOG_DIR=${API_LOG_DIR}/${MODEL_FRAMEWORK}/${MODEL_NAME}/${DGXSYSTEM}
+    mkdir -p ${API_LOG_DIR}
+    _cont_mounts="${_cont_mounts},${API_LOG_DIR}:/logs"
+fi
+
+# MLPerf vars
+MLPERF_HOST_OS=$(srun -N1 -n1 bash <<EOF
+    source /etc/os-release
+    source /etc/dgx-release || true
+    echo "\${PRETTY_NAME} / \${DGX_PRETTY_NAME:-???} \${DGX_OTA_VERSION:-\${DGX_SWBUILD_VERSION:-???}}"
+EOF
+)
+export MLPERF_HOST_OS
+
+# Setup directories
+( umask 0002; mkdir -p "${LOGDIR}" )
+srun --ntasks="${SLURM_JOB_NUM_NODES}" mkdir -p "${LOGDIR}"
+
+# Setup container
+srun --ntasks="${SLURM_JOB_NUM_NODES}" --container-image="${CONT}" --container-name="${_cont_name}" true
+
+srun -N1 -n1 --container-name="${_cont_name}" ibv_devinfo --list
+srun -N1 -n1 --container-name="${_cont_name}" nvidia-smi topo -m
+
+
+
+echo "NCCL_TEST = ${NCCL_TEST}"
+if [[ ${NCCL_TEST} -eq 1 ]]; then
+    (srun --mpi="${SLURM_MPI_TYPE:-pmix}" --ntasks="$(( SLURM_JOB_NUM_NODES * DGXNGPU ))" --ntasks-per-node="${DGXNGPU}" \
+         --container-name="${_cont_name}" all_reduce_perf_mpi -b 62M -e 62M -d half
+) |& tee "${LOGDIR}/${SPREFIX}_nccl.log"
+fi
+
+if [[ "${GET_MOUNT_INFO:-0}" -eq 1 ]]; then
+    (srun --ntasks=1 --ntasks-per-node=1 --container-name="${_cont_name}" \
+        --container-mounts="${_cont_mounts}"  \
+        python3 -c "from mlperf_common.mountcheck import main; main(${cont_mounts_to_verify})"
+    ) |& tee "${LOGDIR}/cont-mount-info.json"
+fi
+
+if [[ "${VERIFY_MOUNT:-1}" -eq 1 ]]; then
+    (srun --ntasks="${SLURM_JOB_NUM_NODES}" --ntasks-per-node=1 --container-name="${_cont_name}" \
+        --container-mounts="${_cont_mounts}"  \
+        python3 -c "from mlperf_common.mountcheck import main; main('cont-mount-info.json', check=True)"
+    ) |& tee "${LOGDIR}/${SPREFIX}_mountcheck.log"
+fi
+
+#Set the value for nvidia-smi boost-slider --vboost
+if [ ${VBOOST_VALUE:-0} -gt 0 ]; then
+        srun --ntasks=${SLURM_JOB_NUM_NODES} bash -c "sudo nvidia-smi boost-slider --vboost ${VBOOST_VALUE}"
+fi
+
+echo "PROLOG_STOP $(date +%s)"
+
+
+# Run experiments
+for _experiment_index in $(seq 1 "${NEXP}"); do
+    (
+        echo "Beginning trial ${_experiment_index} of ${NEXP}"
+        echo ":::DLPAL ${CONT} ${SLURM_JOB_ID} ${SLURM_JOB_NUM_NODES} ${SLURM_JOB_NODELIST} ${MLPERF_CLUSTER_NAME} ${DGXSYSTEM}"
+        echo ":::SYSJSON $(srun --ntasks=1 --container-name="${_cont_name}" mlperf-sysjson.sh)"
+        srun --ntasks=1 --container-name="${_cont_name}" bash -c 'echo ":::GITCOMMITID ${GIT_COMMIT_ID} ${LAUNCHER_GIT_COMMIT_ID}"'
+
+        
+        # Clear caches
+        if [ "${CLEAR_CACHES}" -eq 1 ]; then
+            srun --ntasks="${SLURM_JOB_NUM_NODES}" --mpi="${SLURM_MPI_TYPE:-pmix}" bash -c "echo -n 'Clearing cache on ' && hostname && sync && ${DROPCACHE_CMD}"
+        fi
+
+        # Run experiment
+        export SEED=$(($SEED_BASE - 1 + 10#$_experiment_index))
+        set +e
+        echo "RUNANDTIME_START $(date +%s)"
+        srun -l --mpi="${SLURM_MPI_TYPE:-pmix}" \
+        --ntasks="$(( SLURM_JOB_NUM_NODES * DGXNGPU ))" \
+        --ntasks-per-node="${DGXNGPU}" \
+        --time="${WALLTIME_RUNANDTIME}" \
+        --container-name="${_cont_name}" \
+        --container-mounts="${_cont_mounts}" \
+	--container-writable \
+        --no-container-mount-home \
+        --container-env=MASTER_PORT,MASTER_ADDR \
+        --container-env="PATH=/usr/local/bin:$PATH" \
+        --container-env="PYTHONPATH=/usr/local/lib/python3.10/dist-packages:/usr/local/lib/python3.10/site-packages" \
+        --container-env="PYTHONNOUSERSITE=1" \
+        --container-env="HOME=/tmp/home" \
+        --container-env="TRANSFORMERS_CACHE=/tmp/huggingface" \
+        --container-env="MPLCONFIGDIR=/tmp/matplotlib" \
+        --container-env="TMPDIR=/tmp" \
+        --container-env="XDG_CACHE_HOME=/tmp/cache" \
+        --container-env="NEMO_NLP_TMP=/tmp/nemo_nlp" \
+        slurm2pytorch bash -c "
+            set -x
+            mkdir -p /tmp/home /tmp/huggingface /tmp/matplotlib /tmp/cache /tmp/nemo_nlp
+            export ENABLE_CPU_EXCLUSIVE=0
+            
+            echo 'Running main script'
+            bash ./run_and_time.sh
+        "
+        echo "RUNANDTIME_STOP $(date +%s)"
+        set -e
+    ) |& tee "${_logfile_base}_${_experiment_index}.log"
+
+    # compliance checker
+    if [ "${CHECK_COMPLIANCE}" -eq 1 ]; then
+      srun --ntasks=1 --nodes=1 --container-name="${_cont_name}" \
+           --container-mounts="$(realpath ${LOGDIR}):/results"   \
+           --container-workdir="/results"                        \
+           python3 -m mlperf_logging.compliance_checker --usage training \
+           --ruleset "${MLPERF_RULESET}"                                 \
+           --log_output "/results/compliance_${DATESTAMP}.out"           \
+           "/results/${LOGBASE}_${_experiment_index}.log" \
+     || true
+    fi
+
+    echo "EXPERIMENT_STOP $(date +%s)"
+done
