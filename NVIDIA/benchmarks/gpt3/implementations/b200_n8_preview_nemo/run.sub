@@ -49,7 +49,7 @@ export SHARE_RERUNS=${SHARE_RERUNS:=0}
 : "${NVTX_FLAG:=0}"
 : "${TIME_TAGS:=0}"
 : "${NCCL_TEST:=1}"
-: "${NCCL_LLM_TEST:=1}"
+: "${NCCL_LLM_TEST:=0}"
 : "${NCCL_TEST_SHARP:=}"
 : "${RUN_ONLY_NCCL:=0}"
 : "${SYNTH_DATA:=0}"
@@ -62,7 +62,7 @@ export SHARE_RERUNS=${SHARE_RERUNS:=0}
 : "${GLOBAL_TMP_CHECKPOINTS_DIR:=}"
 : "${SRUN_KILL_ON_BAD_EXIT:=0}"
 : "${DROPCACHE_CMD:="sudo /sbin/sysctl vm.drop_caches=3"}"
-: "${HANG_MONITOR_TIMEOUT:=$([[ "$WALLTIME" -ge 60 ]] && echo 7 || echo 0)}"  # by default turned off for jobs shorter than 1h, otherwise 5 minutes
+: "${HANG_MONITOR_TIMEOUT:=0}"
 : "${ATTEMPT_CUDA_GDB_CORE_DUMP:=1}"
 : "${POSTPROCESS_CUDA_GDB_CORE_DUMP:=1}"  # set to 1 to extract active kernel info from dumps.
 : "${REMOVE_CUDA_GDB_CORE_DUMP:=1}"  # set to 1 to remove coredumps after processing. Will save a lot of disk space. Valid if POSTPROCESS_CUDA_GDB_CORE_DUMP is 1
