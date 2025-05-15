@@ -18,7 +18,19 @@ docker push <docker/registry>/mlperf-nvidia:language_model
 
 1-node NVIDIA 2xA5000 training:
 
+change BERTDIR path of config_A5000_*.sh  as where your dataset places.
+
+1 GPU training
+
+```
+source config_A5000_1x1x192x14.sh
+./run_with_docker.sh
+```
+
+2 GPU training
+
 ```
 source config_A5000_1x2x224x14.sh
-CONT=mlperf-nvidia:language_model DATADIR=<path/to/datadir> DATADIR_PHASE2=<path/to/datadir_phase2> EVALDIR=<path/to/evaldir> CHECKPOINTDIR=<path/to/checkpointdir> CHECKPOINTDIR_PHASE1=<path/to/checkpointdir_phase1 sbatch -N $DGXNNODES -t $WALLTIME run.sub
+./run_with_docker.sh
 ```
+

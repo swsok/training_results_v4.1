@@ -13,7 +13,8 @@
 # limitations under the License.
 
 CPUS=$( ls -d /sys/devices/system/cpu/cpu[[:digit:]]* | wc -w )
-CPUS=$((CPUS / 2))
+#swsok, to use all cores not half
+#CPUS=$((CPUS / 2))
 echo "Using ${CPUS} CPU cores"
 
 function usage()

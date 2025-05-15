@@ -102,12 +102,14 @@ PHASE2="\
 PHASES=( "$PHASE1" "$PHASE2" )
 
 declare -a CMD
+
 if [[ -n "${SLURM_LOCALID-}" ]] && [[ "${SLURM_NTASKS}" -gt "${SLURM_JOB_NUM_NODES}" ]]; then
     # Mode 1: Slurm launched a task for each GPU and set some envvars
     CMD=( 'bindpcie' '--cpu=exclusive' '--ib=single' '--' ${NSYSCMD} 'python' '-u')
 else
     # docker or single gpu, no need to bind
-    CMD=( ${NSYSCMD} 'python' '-u' '-m' 'torch.distributed.launch' '--nproc_per_node=2' '--use_env')
+#    CMD=( ${NSYSCMD} 'python' '-u' '-m' 'torch.distributed.launch' '--nproc_per_node=2' '--use_env')
+    CMD=( ${NSYSCMD} 'python' '-u' )
 fi
 
 # Run fixed number of training samples

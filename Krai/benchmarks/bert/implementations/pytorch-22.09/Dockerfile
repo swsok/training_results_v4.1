@@ -36,11 +36,11 @@ RUN cd /workspace && git clone https://github.com/attardi/wikiextractor.git
 RUN cd /workspace/wikiextractor && git checkout e4abb4cbd019b0257824ee47c23dd163919b731b
 
 # Install BERT
-ENV BERT_PREP_WORKING_DIR /workspace/bert/data
+ENV BERT_PREP_WORKING_DIR=/workspace/bert/data
 WORKDIR /workspace/bert
 COPY . .
 
-ENV PYTHONPATH "/workspace/bert"
+ENV PYTHONPATH="/workspace/bert"
 
 RUN cd /workspace/bert/mhalib && python setup.py build && cp build/lib*/mhalib* ../
 WORKDIR /workspace/bert
