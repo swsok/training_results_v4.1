@@ -42,7 +42,7 @@ for ifile_idx in tqdm(range(num_shards)):
     ]
     handle.close()
 
-def single_file_write(i):
+for i in range(num_shards):
     with open(f'{args.output_hdf5}/shard_list_{i:05}.lst','r') as f:
         ind=json.load(f)
 
@@ -70,41 +70,4 @@ def single_file_write(i):
 
     h5_writer.flush()
     h5_writer.close()
-
-from multiprocessing import Pool
-import multiprocessing
-
-with Pool(processes=multiprocessing.cpu_count()) as pool:
-    pool.map(single_file_write, range(num_shards))
-
-
-'''
-    with open(f'{args.output_hdf5}/shard_list_{i:05}.lst','r') as f:
-        ind=json.load(f)
-
-    max_seq_length = 512
-    max_predictions_per_seq = 76
-    master_sample_idx=0
-    hdf5_compression_method = False
-    n_samples_in_this_shard = len(ind)
-
-    h5_writer = h5py.File('{}/part_{:05d}_of_{:05d}.hdf'.format(args.output_hdf5, i, num_shards), 'w')
-    input_ids = h5_writer.create_dataset('input_ids', (n_samples_in_this_shard,), dtype=h5py.vlen_dtype(np.dtype('int16')), compression=hdf5_compression_method)
-    segment_ids = h5_writer.create_dataset('segment_ids', (n_samples_in_this_shard,), dtype=h5py.vlen_dtype(np.dtype('int8')), compression=hdf5_compression_method)
-    masked_lm_positions = h5_writer.create_dataset('masked_lm_positions', (n_samples_in_this_shard,), dtype=h5py.vlen_dtype(np.dtype('int16')), compression=hdf5_compression_method)
-    masked_lm_ids = h5_writer.create_dataset('masked_lm_ids', (n_samples_in_this_shard,), dtype=h5py.vlen_dtype(np.dtype('int16')), compression=hdf5_compression_method)
-    next_sentence_labels = h5_writer.create_dataset('next_sentence_labels', data=np.zeros(n_samples_in_this_shard, dtype="int8"), dtype='i1', compression=hdf5_compression_method)
-
-    for o_sample_idx in tqdm(range(n_samples_in_this_shard), total=n_samples_in_this_shard):
-        ifile, isample = ind[master_sample_idx]
-        input_ids[o_sample_idx] = ifile_handles[ifile][0][isample, :sum(ifile_handles[ifile][1][isample])]
-        segment_ids[o_sample_idx] = ifile_handles[ifile][2][isample, :sum(ifile_handles[ifile][1][isample])]
-        masked_lm_positions[o_sample_idx] = ifile_handles[ifile][3][isample, :sum(ifile_handles[ifile][3][isample]!=0)]
-        masked_lm_ids[o_sample_idx] = ifile_handles[ifile][4][isample, :sum(ifile_handles[ifile][3][isample]!=0)]
-        next_sentence_labels[o_sample_idx] = ifile_handles[ifile][5][isample]
-        master_sample_idx += 1
-
-    h5_writer.flush()
-    h5_writer.close()
-'''
 

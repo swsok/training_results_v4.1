@@ -23,9 +23,9 @@ export WALLTIME=04:00:00
 
 ## System config params
 export DGXNGPU=1
-export DGXSOCKETCORES=8
+export DGXSOCKETCORES=10
 export DGXNSOCKET=1
-export DGXHT=1         # HT is on is 2, HT off is 1
+export DGXHT=2         # HT is on is 2, HT off is 1
 
 export CONT=swsok/mlperf-krai-bert:language_model
 export BERTDIR="/home/swsok/mlperf/bert"
@@ -36,6 +36,7 @@ export CHECKPOINTDIR_PHASE1="${BERTDIR}/phase1"
 export CHECKPOINTDIR="${BERTDIR}/checkpoints"
 export UNITTESTDIR="${BERTDIR}/unit_test"
 
+#export CUDA_VISIBLE_DEVICES="0,1"
 export CUDA_VISIBLE_DEVICES="0"
 export NEXP=1
 export OMP_NUM_THREADS=1

@@ -104,6 +104,8 @@ nvidia-docker run --rm --init --detach --gpus='"'device=${NV_GPU}'"' \
 #sleep 30
 sleep 5
 docker exec -it "${_cont_name}" true
+#swsok
+docker exec -it "${_cont_name}" nvidia-smi
 
 readonly TORCH_RUN="python -m torch.distributed.run --standalone --no_python"
 
